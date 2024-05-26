@@ -1,0 +1,161 @@
+{
+  "product": [
+    {
+      "id": "1",
+      "category": "iPhone",
+      "name": "iPhone 14 pro ",
+      "img": "https://www.gsmarena.com.bd/images/products/Apple-iPhone-14-Pro-Purple.jpg",
+      "model": "iPhone 14 Pro, A2890, A2650, A2889, A2892, iphone15,2",
+      "resale_price": "72,000",
+      "original_price": "1,58,000",
+      "date": "05/09/2022",
+      "year": "2",
+      "location": "Dhaka",
+      "details": "Apple iPhone 14 Pro price starts from BDT. 158,000. Apple iPhone 14 Pro internal storage base variant of 6 GB Ram, 128 GB, 256 GB, 512 GB, 1 TB Internal Memory (ROM). Apple iPhone 14 Pro which is available in Space Black, Silver, Gold, Deep Purple color."
+    },
+    {
+      "id": "2",
+      "category": "samsung",
+      "name": "Samsung Galaxy A54 5G",
+      "img": "https://www.gsmarena.com.bd/images/products/Samsung-Galaxy-A54.jpg",
+      "model": "Galaxy A54, SM-A546V, SM-A546U, SM-A546U1, SM-A546B, SM-A546B/DS, SM-A546E, SM-A546E/DS, SM-A5460",
+      "resale_price": "31,999",
+      "original_price": "63,999",
+      "date": "05/03/2023",
+      "year": "3",
+      "location": "Dhaka",
+      "details": "Samsung Galaxy A54 5G price starts from BDT. 63,999. Samsung Galaxy A54 5G internal storage base variant of 6 GB, 8 GB Ram, 128 GB, 256 GB Internal Memory (ROM). Samsung Galaxy A54 5G which is available in Lime, Graphite, Violet, White color."
+    },
+    {
+      "id": "3",
+      "category": "nokia",
+      "name": "Nokia 8210 4G",
+      "img": "https://www.gsmarena.com.bd/images/products/Nokia-8210-4G.jpg",
+      "model": "8210 4G",
+      "resale_price": "3,250",
+      "original_price": "6,500",
+      "date": "05/07/2022",
+      "year": "5",
+      "location": "Dhaka",
+      "details": "Nokia 8210 4G price starts from BDT. 6,500. Nokia 8210 4G internal storage base variant of 48 MB Ram, 128 MB Internal Memory (ROM). Nokia 8210 4G which is available in Sand, Blue, Red color."
+    },
+    {
+      "id": "4",
+      "category": "realMi",
+      "name": "RealMi C31",
+      "img": "https://www.gsmarena.com.bd/images/products/Realme-C31-Silver.jpg",
+      "model": "C31",
+      "resale_price": "7,999",
+      "original_price": "14,999",
+      "date": "05/03/2022",
+      "year": "1",
+      "location": "Dhaka",
+      "details": "RealMi C31 price starts from BDT. 14,999. RealMi C31 internal storage base variant of 3 GB, 4 GB Ram, 32 GB, 64 GB Internal Memory (ROM). RealMe C31 which is available in Light Silver, Dark Green color."
+    },
+    {
+      "id": "5",
+      "category": "vivo",
+      "name": "Vivo Y21G ",
+      "img": "https://www.gsmarena.com.bd/images/products/Vivo-Y21G-Midnight-Blue.jpg",
+      "model": "Y21G",
+      "resale_price": "7,999",
+      "original_price": "15,999",
+      "date": "05/04/2022",
+      "year": "2",
+      "location": "Dhaka",
+      "details": "Vivo Y21G price starts from BDT. 15,999. Vivo Y21G internal storage base variant of 4 GB Ram, 64 GB Internal Memory (ROM). Vivo Y21G which is available in Diamond Glow, Midnight Blue color."
+    },
+    {
+      "id": "6",
+      "category": "walton",
+      "name": "Walton Xanon X20",
+      "img": "https://www.gsmarena.com.bd/images/products/Walton-Xanon-X20-Black.jpg",
+      "model": " Xanon X20",
+      "resale_price": "9,499",
+      "original_price": "18,999",
+      "date": "05/08/2020",
+      "year": "1",
+      "location": "Dhaka",
+      "details": "Walton Xanon X20 price starts from BDT. 18,999. Walton Xanon X20 internal storage base variant of 8 GB Ram, 128 GB Internal Memory (ROM). Walton Xanon X20 which is available in Cosmic Black, Orange Shimmer color."
+    },
+    {
+      "id": "760b",
+      "name": "ddddddd",
+      "sellerName": "rony3",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMp2QN2WCx7VRAXuJme-AcdxJJeXRSM3obFhXX_uIKvQ&s",
+      "model": "s4",
+      "location": "ghh",
+      "resale_price": "1000",
+      "original_price": "2000",
+      "category": "iphone",
+      "details": "dddddddddddd",
+      "userEmail": "rony3@gmail.com",
+      "date": "2024-05-04",
+      "yearUsed": "10"
+    },
+    {
+      "id": "9a59",
+      "name": "ddddddd33",
+      "sellerName": "rony3",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1rxuLcshq7bMwaJl-ZHQNP_bnV78b61snBU5Eb3HPVA&s",
+      "model": "v33",
+      "location": "d",
+      "resale_price": "50000",
+      "original_price": "70000",
+      "category": "iphone",
+      "phone": "017111",
+      "details": "fvvvvvvvvvvvvvvvvvvv",
+      "userEmail": "rony3@gmail.com",
+      "date": "2024-06-02",
+      "yearUsed": "10"
+    },
+    {
+      "id": "8843",
+      "name": "vivi223338",
+      "sellerName": "rony3",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMp2QN2WCx7VRAXuJme-AcdxJJeXRSM3obFhXX_uIKvQ&s",
+      "model": "v33",
+      "location": "dhaka",
+      "resale_price": "50000",
+      "original_price": "70000",
+      "category": "Vivo",
+      "phone": "01222222",
+      "details": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+      "userEmail": "rony3@gmail.com",
+      "date": "2024-06-02",
+      "yearUsed": "10"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "category": "iPhone",
+      "name": "iPhone"
+    },
+    {
+      "id": "2",
+      "category": "samsung",
+      "name": "Samsung"
+    },
+    {
+      "id": "3",
+      "category": "nokia",
+      "name": "Nokia"
+    },
+    {
+      "id": "4",
+      "category": "realMi",
+      "name": "RealMi"
+    },
+    {
+      "id": "5",
+      "category": "vivo",
+      "name": "Vivo"
+    },
+    {
+      "id": "6",
+      "category": "walton",
+      "name": "Walton"
+    }
+  ]
+}
