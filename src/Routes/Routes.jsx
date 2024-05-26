@@ -12,6 +12,8 @@ import EditProduct from "../Pages/Dashboard/EditProduct/EditProduct";
 import MyProductTable from "../Pages/Dashboard/MyProduct/MyProductTable";
 import PrivateRoute from "./PrivateRoute";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import FilterByCategorey from "../Pages/FilterByCategorey/FilterByCategorey";
+import AboutUs from "../Pages/AboutUs/AboutUs";
 // import FilterByCategorey from "../Pages/FilterByCategorey/FilterByCategorey";
 export const routes = createBrowserRouter([
     {
@@ -31,9 +33,13 @@ export const routes = createBrowserRouter([
             path:'/login',
             element: <LogIn />
           },
+          {
+            path:'/aboutUs',
+            element: <AboutUs />
+          },
         //   {
         //     path: '/product/:category',
-        //     loader:async({params})=> await fetch(`http://localhost:3000/categories/${params.category}`),
+        //     loader:async({params})=> await fetch(`http://localhost:3000/product/${params.category}`),
         //     element: <FilterByCategorey />
         // },
         {

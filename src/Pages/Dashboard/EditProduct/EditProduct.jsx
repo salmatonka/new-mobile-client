@@ -8,19 +8,18 @@ const EditProduct = () => {
 
     useTitle('AddProduct');
 
-const product = useLoaderData();
-console.log(product)
-const [name, setName] = useState(product.name)
-// const [sellerName, setSellerName] = useState(product.sellerName)
-const [date, setDate] = useState(product.date)
-const [img, setImg] = useState(product.imge)
-const [model, setModel] = useState(product.model)
-const [category, setCategory] = useState(product.categorye)
-const [location, setLocation] = useState(product.location)
-const [resale_price, setResale_price] = useState(product.resale_price)
-const [original_price, setOriginal_price] = useState(product.original_price)
-const [yearUsed, setYearUsed] = useState(product.yearUsed)
-const [details, setDetails] = useState(product.details)
+    const product = useLoaderData();
+    console.log(product)
+    const [name, setName] = useState(product.name)
+    const [date, setDate] = useState(product.date)
+    const [img, setImg] = useState(product.imge)
+    const [model, setModel] = useState(product.model)
+    const [category, setCategory] = useState(product.categorye)
+    const [location, setLocation] = useState(product.location)
+    const [resale_price, setResale_price] = useState(product.resale_price)
+    const [original_price, setOriginal_price] = useState(product.original_price)
+    const [yearUsed, setYearUsed] = useState(product.yearUsed)
+    const [details, setDetails] = useState(product.details)
 
 
 
@@ -34,9 +33,7 @@ const [details, setDetails] = useState(product.details)
         const brandName = form.brandName.value;
         const sellerName = form.sellerName.value;
         const date = form.date.value;
-        // const img = form.img.value;
         const img = form.img.value;
-
         const model = form.model.value;
         const category = form.category.value;
         const location = form.location.value;
@@ -47,7 +44,6 @@ const [details, setDetails] = useState(product.details)
 
         const newData = {
             name: brandName,
-            // sellerName,
             img,
             model,
             location,
@@ -58,8 +54,8 @@ const [details, setDetails] = useState(product.details)
             userEmail: user.email,
             date, yearUsed
         }
-        console.log(newData)
-        fetch(`http://localhost:3000/product/${product.id}`, {
+        // console.log(newData)
+        fetch(`http://localhost:3000/product/${product?.id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'
@@ -73,8 +69,8 @@ const [details, setDetails] = useState(product.details)
                 navigate('/dashboard/myProduct')
 
             })
-        
-        
+
+
 
     }
     return (
@@ -88,65 +84,65 @@ const [details, setDetails] = useState(product.details)
                             <div className='md:w-1/2 '>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">BrandName</span></label>
-                                    <input 
-                                    onChange={(e)=>setName(e.target.value)}
-                                    value={name}
-                                     name='brandName'
-                                    type='text'
-                                     className="input input-bordered w-full" required />
+                                    <input
+                                        onChange={(e) => setName(e.target.value)}
+                                        value={name}
+                                        name='brandName'
+                                        type='text'
+                                        className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Picture</span></label>
                                     <input
-                                    onChange={(e)=>setImg(e.target.value)} 
-                                    value={img}
-                                     name='img'
-                                      type='text'
-                                       className="file-input file-input-bordered file-input-info w-full" required />
+                                        onChange={(e) => setImg(e.target.value)}
+                                        value={img}
+                                        name='img'
+                                        type='text'
+                                        className="file-input file-input-bordered file-input-info w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">SellerName</span></label>
                                     <input
-                                     disabled
-                                      defaultValue={user?.displayName}
-                                       name='sellerName'
+                                        disabled
+                                        defaultValue={user?.displayName}
+                                        name='sellerName'
                                         type='text' className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Location</span></label>
                                     <input
-                                    onChange={(e)=>setLocation(e.target.value)}
-                                     value={location} 
-                                     name='location'
-                                      type='text' 
-                                      className="input input-bordered w-full" required />
+                                        onChange={(e) => setLocation(e.target.value)}
+                                        value={location}
+                                        name='location'
+                                        type='text'
+                                        className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Date</span></label>
                                     <input
-                                    onChange={(e)=>setDate(e.target.value)}
-                                     value={date}
-                                      name='date'
-                                       type='date'
+                                        onChange={(e) => setDate(e.target.value)}
+                                        value={date}
+                                        name='date'
+                                        type='date'
                                         className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Model</span></label>
                                     <input
-                                    onChange={(e)=>setModel(e.target.value)}
-                                     value={model} 
-                                     name='model'
-                                      type='text' 
-                                      className="input input-bordered w-full" required />
+                                        onChange={(e) => setModel(e.target.value)}
+                                        value={model}
+                                        name='model'
+                                        type='text'
+                                        className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Category</span></label>
                                     <select
-                                    onChange={(e)=>setCategory(e.target.value)}
-                                     required 
-                                     value={category} 
-                                     name='category'
-                                      className="select select-bordered w-full">
+                                        onChange={(e) => setCategory(e.target.value)}
+                                        required
+                                        value={category}
+                                        name='category'
+                                        className="select select-bordered w-full">
                                         <option value='iphone'>iphone</option>
                                         <option value='Samsung'>Samsung</option>
                                         <option value='Nokia'>Nokia</option>
@@ -161,47 +157,47 @@ const [details, setDetails] = useState(product.details)
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Resale Price</span></label>
                                     <input
-                                    onChange={(e)=>setResale_price(e.target.value)}
-                                     value={resale_price}
-                                      name='resale_price'
-                                       type='number' 
-                                       className="input input-bordered w-full" required />
+                                        onChange={(e) => setResale_price(e.target.value)}
+                                        value={resale_price}
+                                        name='resale_price'
+                                        type='number'
+                                        className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">OriginalPrice</span></label>
                                     <input
-                                    onChange={(e)=>setOriginal_price(e.target.value)}
-                                     value={original_price}
-                                      name='original_price'
-                                       type='number'
+                                        onChange={(e) => setOriginal_price(e.target.value)}
+                                        value={original_price}
+                                        name='original_price'
+                                        type='number'
                                         className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Email</span></label>
-                                    <input 
-                                    disabled 
-                                    defaultValue={user.email}
-                                     name='email' 
-                                     type='email'
-                                      className="input input-bordered w-full" />
+                                    <input
+                                        disabled
+                                        defaultValue={user.email}
+                                        name='email'
+                                        type='email'
+                                        className="input input-bordered w-full" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Years of Use</span></label>
                                     <input
-                                    onChange={(e)=>setYearUsed(e.target.value)}
-                                     value={yearUsed}
-                                      name='yearUsed' 
-                                      type='text' 
-                                      className="input input-bordered w-full" required />
+                                        onChange={(e) => setYearUsed(e.target.value)}
+                                        value={yearUsed}
+                                        name='yearUsed'
+                                        type='text'
+                                        className="input input-bordered w-full" required />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Details</span></label>
                                     <textarea
-                                    onChange={(e)=>setDetails(e.target.value)}
-                                     value={details}
-                                      name='details'
-                                       type='text' 
-                                       className="input input-bordered w-full h-32" required />
+                                        onChange={(e) => setDetails(e.target.value)}
+                                        value={details}
+                                        name='details'
+                                        type='text'
+                                        className="input input-bordered w-full h-32" required />
                                 </div>
 
                             </div>

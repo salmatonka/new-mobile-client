@@ -26,7 +26,7 @@ const Products = () => {
                         products?.reverse()
                         ?.slice(0, 6)
                         ?.map(product => <ProductsCard
-                            key={product?._id}
+                            key={product?.id}
                             product={product}
                         ></ProductsCard>)
                     }

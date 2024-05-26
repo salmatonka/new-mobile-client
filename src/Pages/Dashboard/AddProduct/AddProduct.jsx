@@ -8,8 +8,7 @@ const AddProduct = () => {
     useTitle('AddProduct');
     const { user } = useContext(AuthContext)
     const navigate = useNavigate();
-    // const imageHostingKey = process.env.REACT_APP_imgbb_key;
-
+   
     const currentDate = new Date();
     const date = currentDate.toLocaleDateString("en-US", {
         hour: "2-digit",
@@ -32,7 +31,7 @@ const AddProduct = () => {
         const yearUsed = form.yearUsed.value;
         const details = form.details.value;
 
-    
+
         const newData = {
             name: brandName,
             sellerName,
@@ -43,7 +42,7 @@ const AddProduct = () => {
             original_price,
             category,
             details,
-            userEmail: user.email,
+            userEmail: user?.email,
             date, yearUsed
         }
         console.log(newData)
@@ -61,17 +60,17 @@ const AddProduct = () => {
                 navigate('/dashboard/myProduct')
 
             })
-            // refetch();
-            if(isLoading){
-              return <p className='text-5xl'>Loading....</p>
-            }
+        // refetch();
+        if (isLoading) {
+            return <p className='text-5xl'>Loading....</p>
+        }
 
     }
 
 
     return (
-        <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 px-14'>
-            <div className='flex mb-12 mt-5'>
+        <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 lg:px-14'>
+            <div className='flex justify-center mb-12 mt-5'>
                 <div className='shadow-xl p-10 border border-2'>
                     <h3 className='text-3xl text-bold text-center'>Please Add Product</h3>
                     <form onSubmit={handleSubmit}>
@@ -126,7 +125,7 @@ const AddProduct = () => {
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Email</span></label>
-                                    <input disabled defaultValue={user.email} name='email' type='email' className="input input-bordered w-full" />
+                                    <input disabled defaultValue={user?.email} name='email' type='email' className="input input-bordered w-full" />
                                 </div>
                                 <div className="form-control w-full">
                                     <label className="label"> <span className="label-text">Years of Use</span></label>

@@ -1,18 +1,15 @@
 import React, { useContext, useState } from 'react'
 import { toast } from 'react-toastify';
 import { AuthContext } from '../../../Context/AuthProvider';
-import { Link, useLoaderData, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { MdDelete } from "react-icons/md";
+import { FaRegEdit } from "react-icons/fa";
 
 const MyProductTable = ({myProduct}) => {
 
   
-  // const myProducts = useLoaderData();
   const { id, name, img,  resale_price } =  myProduct;
         //  console.log(myProduct)
-
-
-
-
     const { user } = useContext(AuthContext)
     // const navigate = useNavigate();
     const [productData, setProductData] = useState(null)
@@ -26,9 +23,10 @@ const MyProductTable = ({myProduct}) => {
       })
       .then(res=> res.json())
       .then(data=> {
-        if(data.deletedCount > 0){
+        if(data?.deletedCount > 0){
           console.log(data);
           toast.success('deleted success')
+          
         }
   
       })
@@ -50,10 +48,10 @@ const MyProductTable = ({myProduct}) => {
           <td>{name}</td>
           <td>{resale_price}</td>
           <td>
-           <Link to={`/dashboard/editProduct/${id}`}> <button  className="btn bg-purple-300 btn-md">Edit Product</button></Link>
+           <Link to={`/dashboard/editProduct/${id}`}> <button  className="btn bg-purple-300 btn-md">Edit <FaRegEdit /></button></Link>
           </td>
           <td>
-            <button onClick={()=> handleDeleteItem(id)} className="btn bg-red-300 btn-md">Delete</button>
+            <button onClick={()=> handleDeleteItem(id)} className="btn bg-red-300 btn-md">Delete <MdDelete /></button>
           </td>
 
        

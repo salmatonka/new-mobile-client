@@ -5,6 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import useTitle from "../../../Hooks/useTitle";
 
 const MyProduct = () => {
+
     useTitle('MyProduct');
     const { user } = useContext(AuthContext)
     // console.log(user);
@@ -20,31 +21,33 @@ const MyProduct = () => {
     })
     // console.log(myProducts)
     return (
-        <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 px-14'>
-            {/* <h2>product:{myProducts.length}</h2> */}
-            <h3 className='text-3xl text-bold pb-6 text-center'>My Product</h3>
-            <div className="overflow-x-auto ">
-                <table className="table w-full bg-gradient-to-tr to-purple-100 from-cyan-100 ">
+        <div className=" bg-gradient-to-tr to-purple-100 from-cyan-100 lg:px-14">
+            <div className=' bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 '>
+                {/* <h2>product:{myProducts.length}</h2> */}
+                <h3 className='text-3xl text-bold pb-6 text-center'>My Product</h3>
+                <div className="overflow-x-auto ">
+                    <table className="table w-full bg-gradient-to-tr to-purple-100 from-cyan-100 ">
 
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Brand Name</th>
-                            <th>Price</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            myProducts?.map(myProduct => <MyProductTable
-                                key={myProduct._id}
-                                myProduct={myProduct}
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Brand Name</th>
+                                <th>Price</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                myProducts?.map(myProduct => <MyProductTable
+                                    key={myProduct?.id}
+                                    myProduct={myProduct}
 
-                            ></MyProductTable>)
-                        }
-                    </tbody>
-                </table>
+                                ></MyProductTable>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     );
