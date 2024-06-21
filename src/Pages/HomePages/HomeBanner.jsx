@@ -2,7 +2,7 @@ import { TypeAnimation as RawTypeAnimation } from 'react-type-animation';
 
 const HomeBanner = () => {
   return (
-    <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 '>
+    <div className=''>
 
     <div className=''>
 

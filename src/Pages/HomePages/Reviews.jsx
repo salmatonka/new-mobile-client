@@ -1,7 +1,7 @@
 
 const Reviews = () => {
   return (
-    <div className='bg-gradient-to-tr to-purple-200 from-cyan-200 '>
+    <div className=''>
     <h1 className="text-3xl pt-12 mb-5 font-bold text-center  ">Mobile Reviews</h1>
     <div className="bg-gradient-to-tr to-purple-200 from-cyan-200 w-5/6 mx-auto rounded-lg shadow-2xl py-16 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 

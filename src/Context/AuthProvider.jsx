@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword,sendPasswordResetEmail, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from 'firebase/auth';
 import app from '../Firebase/firebase.config';
 
 
@@ -10,62 +10,77 @@ const googleProvider = new GoogleAuthProvider();
 
 
 const AuthProvider = ({ children }) => {
-    const [user, setUser] = useState('');
+    const [user, setUser] = useState(null);
+
+
     const [loading, setLoading] = useState(true);
 
+    const googleProvider = new GoogleAuthProvider();
+    // Create User 
     const createUser = (email, password) => {
         setLoading(true);
-        return createUserWithEmailAndPassword(auth, email, password)
+        return createUserWithEmailAndPassword(auth, email, password);
     }
 
-    const singIn = (email, password) => {
+    // Email Sign In 
+    const signIn = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth, email, password)
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const singOut = () => {
+    // Password Reset 
+    const reset = (email) => {
         setLoading(true);
-        return signOut(auth)
+        return sendPasswordResetEmail(auth, email);
     }
 
-    const updateUserData = (userInformation) => {
+    // Google Sign in 
+    const GoogleLogIn = () => {
         setLoading(true);
-        return updateProfile(auth.currentUser, userInformation)
+        return signInWithPopup(auth, googleProvider);
     }
 
-    const googleSignPop = () => {
+    // //Log out
+    const logOut = () => {
         setLoading(true);
-        return signInWithPopup(auth, googleProvider)
+        return signOut(auth);
     }
 
-
-
+    // Observer to manage user 
     useEffect(() => {
-        const unSubscribe = onAuthStateChanged(auth, currentUser => {
-            // console.log('User observed')
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log(currentUser);
             setUser(currentUser);
             setLoading(false);
-        });
+        })
         return () => {
-            unSubscribe()
+            return unsubscribe;
         }
     }, [])
 
-    const authInfo = {
-        user,
-        createUser,
-        singIn,
-        singOut,
-        googleSignPop,
-        updateUserData,
-        loading,
+    // Update User 
+    const updateUser = (userInfo) => {
+        setLoading(true);
+        return updateProfile(auth.currentUser, userInfo)
     }
 
+
+
+    // -----Auth Result Object---- //
+    const authValue = {
+        user,
+        loading,
+        createUser,
+        GoogleLogIn,
+        signIn,
+        logOut,
+        updateUser,
+        reset
+    }
     return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
+        <AuthContext.Provider value={authValue}>
+            {children};
         </AuthContext.Provider>
     );
 };
-
 export default AuthProvider

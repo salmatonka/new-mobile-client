@@ -6,7 +6,7 @@ import { AiFillSetting } from 'react-icons/ai';
 
 const ChooseOption = () => {
   return (
-    <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 py-16 '>
+    <div className=' py-16 '>
     <div>
         <div className='bg-gradient-to-tr to-purple-200 from-cyan-200 w-5/6 mx-auto rounded-lg shadow-2xl text-center px-4 py-4'>
             <h3 className='text-center text-3xl font-bold pb-4 mt-6'>WHY CHOOSE US</h3>

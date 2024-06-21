@@ -6,13 +6,13 @@ import { toast } from 'react-toastify';
 
 const EditProduct = () => {
 
-    useTitle('AddProduct');
+    useTitle('EditProduct');
 
     const product = useLoaderData();
     console.log(product)
     const [name, setName] = useState(product.name)
     const [date, setDate] = useState(product.date)
-    const [img, setImg] = useState(product.imge)
+    const [img, setImg] = useState(product.img)
     const [model, setModel] = useState(product.model)
     const [category, setCategory] = useState(product.categorye)
     const [location, setLocation] = useState(product.location)
@@ -55,7 +55,7 @@ const EditProduct = () => {
             date, yearUsed
         }
         // console.log(newData)
-        fetch(`http://localhost:3000/product/${product?.id}`, {
+        fetch(`https://mobile-market-server.onrender.com/myProducts/${product._id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'
@@ -66,7 +66,7 @@ const EditProduct = () => {
             .then(data => {
                 console.log(data)
                 toast.success('product added')
-                navigate('/dashboard/myProduct')
+                navigate('/dashboard/myProducts')
 
             })
 

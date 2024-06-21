@@ -2,6 +2,7 @@ import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
 import { useContext, useState } from "react";
 import { AuthContext } from "../../Context/AuthProvider";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
     useTitle('DetailsCard');
@@ -11,7 +12,7 @@ const ProductDetails = () => {
 
     const [productData, setProductData] = useState(null)
     const productDetails = useLoaderData();
-    const { _id, name,details, img, sellerName, report, userEmail, date, resale_price, original_price, location, year} =  productDetails;
+    const { _id, name,details, img, sellerName, date, resale_price, current_price, location, year} =  productDetails;
         
     // console.log(productDetails)
 
@@ -22,8 +23,8 @@ const ProductDetails = () => {
         const email = form.email.value;
         const phone = form.phone.value;
         const location = form.location.value;
-        const description = form.description.value;
-        const image_url = form.image_url.value;
+        // const details = form.details.value;
+        // const image_url = form.image_url.value;
 
         const booking = {
             productName: name,
@@ -31,15 +32,16 @@ const ProductDetails = () => {
             email,
             phone,
             location,
-            description,
-            image_url,
+            details,
+            // image_url,
+            img,
             resale_price, 
-            original_price
-
+            current_price,
+            year
 
         }
         console.log(booking)
-        fetch(`http://localhost:3000/product`, {
+        fetch(`https://mobile-market-server.onrender.com/bookings`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -48,20 +50,28 @@ const ProductDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-                navigate('/dashboard')
+                // console.log(data)
+                // toast.success('Product Added Successfully!');
+                //             navigate('/dashboard/myOrders');
+
+                console.log(data);
+                if (data.acknowledged) {
+                   
+                    toast.success('Booking Confirmed');
+                    navigate('/dashboard/myOrders');
+                   
+                }
+                else {
+                    toast.error(data.message);
+                }
 
             })
     };
 
 
 
-
-
-
-
   return (
-    <section className="text-gray-800 pt-12">
+    <section className="text-gray-800 pt-12 max-w-[1240px] mx-auto">
 	<div className="container flex flex-col justify-center p-6 mx-auto sm:py-12 lg:py-24 lg:flex-row lg:justify-between">
 		<div className="flex items-center justify-center p-6 mt-8 lg:mt-0 h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128">
 			<img src={img} alt="" className="object-contain h-72 sm:h-80 lg:h-96 xl:h-112 2xl:h-128" />
@@ -72,7 +82,7 @@ const ProductDetails = () => {
 			<p className="text-lg mt-5">{details}</p>
 			<div className='md:flex justify-between'>
 				<h3 className='text-xl font-bold text-blue-600'>Resale Price: ৳ {resale_price}</h3>
-				<h4><s>Current Price: ৳{original_price}</s> </h4>
+				<h4><s>Current Price: ৳{current_price}</s> </h4>
 
 			</div>
             <p>Date: {date}</p>
@@ -87,16 +97,16 @@ const ProductDetails = () => {
                 
 			</div>
 
-            <Link 
+            {/* <Link 
             style={{ boxShadow: "10px 10px 5px gray", fontSize: "18px" }}
              className="btn bg-gradient-to-tr to-purple-400 from-cyan-300 font-bold text-white mt-3" 
-              to='/dashboard/addProduct'><button>Add Product</button></Link>
+              to='/dashboard/addProduct'><button>Add Product</button></Link> */}
 
 
-            {/* <label htmlFor='booking-modal' style={{ boxShadow: "10px 10px 5px gray", fontSize: "18px" }} className="btn bg-gradient-to-tr to-purple-400 from-cyan-300 font-bold text-white mt-3">Book Now!</label> */}
+            <label htmlFor='booking-modal' style={{ boxShadow: "10px 10px 5px gray", fontSize: "18px" }} className="btn bg-gradient-to-tr to-purple-400 from-cyan-300 font-bold text-white mt-3">Book Now!</label>
 
 
-			{/* <div>
+			<div>
             <input type="checkbox" id="booking-modal" className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box relative">
@@ -109,7 +119,7 @@ const ProductDetails = () => {
                         <input name='email' type="email" defaultValue={user?.email} className="input input-bordered w-full my-3" disabled />
                         <div className='flex justify-between'>
                             <p>Resale Price: ৳{resale_price}</p>
-                            <p><s> Current Price: ৳{original_price}</s> </p>
+                            <p><s> Current Price: ৳{current_price}</s> </p>
                         </div>
                         <input name='phone' type="number" placeholder="Your Phone" className="input input-bordered w-full my-3" required />
                         <textarea name='location' className="textarea textarea-bordered w-full my-3" placeholder="You Location" required></textarea>
@@ -125,7 +135,7 @@ const ProductDetails = () => {
                     </form>
                 </div>
             </div>
-        </div> */}
+        </div>
 
 		</div>
 

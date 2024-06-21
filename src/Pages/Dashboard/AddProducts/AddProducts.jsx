@@ -1,10 +1,10 @@
-import { useContext } from "react";
-import useTitle from "../../../Hooks/useTitle";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../Context/AuthProvider";
-import { toast } from "react-toastify";
+import React, { useContext } from 'react'
+import { AuthContext } from '../../../Context/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+import useTitle from '../../../Hooks/useTitle';
+import { toast } from 'react-toastify';
 
-const AddProduct = () => {
+const AddProducts = () => {
     useTitle('AddProduct');
     const { user } = useContext(AuthContext)
     const navigate = useNavigate();
@@ -46,7 +46,7 @@ const AddProduct = () => {
             date, yearUsed
         }
         console.log(newData)
-        fetch(`http://localhost:3000/product`, {
+        fetch(`https://mobile-market-server.onrender.com/myProducts`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -57,13 +57,11 @@ const AddProduct = () => {
             .then(data => {
                 console.log(data)
                 toast.success('product added')
-                navigate('/dashboard/myProduct')
+                navigate('/dashboard/myProducts')
 
             })
         // refetch();
-        if (isLoading) {
-            return <p className='text-5xl'>Loading....</p>
-        }
+        
 
     }
 
@@ -150,4 +148,5 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct
+
+export default AddProducts

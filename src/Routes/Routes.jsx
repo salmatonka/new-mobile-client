@@ -6,14 +6,18 @@ import SignUp from "../Pages/Forms/SignUp";
 import LogIn from "../Pages/Forms/LogIn";
 import ProductDetails from "../Pages/Products/ProductDetails";
 import DashboardLayout from "../Layouts/DashboardLayout";
-import AddProduct from "../Pages/Dashboard/AddProduct/AddProduct";
-import MyProduct from "../Pages/Dashboard/MyProduct/MyProduct";
 import EditProduct from "../Pages/Dashboard/EditProduct/EditProduct";
-import MyProductTable from "../Pages/Dashboard/MyProduct/MyProductTable";
 import PrivateRoute from "./PrivateRoute";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
-import FilterByCategorey from "../Pages/FilterByCategorey/FilterByCategorey";
 import AboutUs from "../Pages/AboutUs/AboutUs";
+import AllProducts from "../Pages/Products/AllProducts";
+import AllUsers from "../Pages/Dashboard/AllUsers/AllUsers";
+import UserProfile from "../Pages/Dashboard/UserProfile/UserProfile";
+import Carts from "../Pages/Carts/Carts";
+import AddProducts from "../Pages/Dashboard/AddProducts/AddProducts";
+import MyProducts from "../Pages/Dashboard/MyProducts/MyProducts";
+import MyOrders from "../Pages/Dashboard/MyOrders/MyOrders";
+import ContactUs from "../Pages/ContactUs/ContactUs";
 // import FilterByCategorey from "../Pages/FilterByCategorey/FilterByCategorey";
 export const routes = createBrowserRouter([
     {
@@ -37,14 +41,19 @@ export const routes = createBrowserRouter([
             path:'/aboutUs',
             element: <AboutUs />
           },
-        //   {
-        //     path: '/product/:category',
-        //     loader:async({params})=> await fetch(`http://localhost:3000/product/${params.category}`),
-        //     element: <FilterByCategorey />
-        // },
+          {
+            path:'/contactUs',
+            element: <ContactUs />
+          },
+          {
+            path:'/allProducts',
+            loader: async()=> await fetch(`https://mobile-market-server.onrender.com/usedMobile`),
+            element: <AllProducts />
+          },
+       
         {
-            path: '/product/:id',
-            loader: async({params})=> await fetch(`http://localhost:3000/product/${params.id}`),
+            path: '/mobile/:id',
+            loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/mobile/${params.id}`),
             element: <ProductDetails />
         },
      ]
@@ -60,20 +69,38 @@ export const routes = createBrowserRouter([
               },
             
             {
-                path: '/dashboard/addProduct',
-                element:<AddProduct /> ,
-                // loader: async({params})=> await fetch(`http://localhost:3000/product/${params.id}`),
+                path: '/dashboard/addProducts',
+                element:<AddProducts /> ,
+                // loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/product/${params.id}`),
             },
-           
             {
-                path: '/dashboard/myProduct',
-                element: <MyProduct />
+              path: '/dashboard/cart',
+              element: <Carts />
+          },
+            {
+                path: '/dashboard/myProducts',
+                element: <MyProducts />
+
+            },
+            {
+                path: '/dashboard/myOrders',
+                element: <MyOrders />
 
             },
             {
                 path: '/dashboard/editProduct/:id',
                 element: <EditProduct />,
-                loader: async({params})=> await fetch(`http://localhost:3000/product/${params.id}`),
+                loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/myProducts/${params.id}`),
+            },
+            {
+                path: '/dashboard/allUsers',
+                element: <AllUsers />
+
+            },
+            {
+                path: '/dashboard/userProfile',
+                element: <UserProfile />
+
             },
             
         ]

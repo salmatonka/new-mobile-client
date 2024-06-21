@@ -1,7 +1,7 @@
 
 const SourcingPage = () => {
   return (
-    <div className='py-10 bg-gradient-to-tr to-purple-100 from-cyan-100'>
+    <div className='py-10 '>
     <section className='bg-gradient-to-tr to-purple-200 from-cyan-200 w-5/6 mx-auto rounded-lg shadow-2xl'>
         <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
             <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">

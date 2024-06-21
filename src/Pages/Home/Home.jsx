@@ -1,3 +1,4 @@
+import useTitle from "../../Hooks/useTitle"
 import Category from "../Category/Category"
 import ChooseOption from "../HomePages/ChooseOption"
 import HeadLine from "../HomePages/HeadLine"
@@ -8,6 +9,7 @@ import SourcingPage from "../HomePages/SourcingPage"
 import Products from "../Products/Products"
 
 const Home = () => {
+  useTitle('Home')
   return (
     <div>
       < HeadLine />
