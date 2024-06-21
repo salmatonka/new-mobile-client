@@ -18,7 +18,7 @@ const Carts = () => {
         const proceed = window.confirm('Sure to delete this booking!');
         if (proceed) {
             fetch(`https://mobile-market-server.onrender.com/carts/${id}`, {
-                
+                mode: 'no-cors',
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
