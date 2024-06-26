@@ -46,6 +46,7 @@ export const routes = createBrowserRouter([
             element: <ContactUs />
           },
           {
+            // https://mobile-market-server.onrender.com
             path:'/allProducts',
             loader: async()=> await fetch(`https://mobile-market-server.onrender.com/usedMobile`),
             element: <AllProducts />
