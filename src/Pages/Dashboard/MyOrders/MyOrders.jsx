@@ -11,7 +11,7 @@ const MyOrders = () => {
     const { data: orders = [], refetch } = useQuery({
         queryKey: ['orders'],
         queryFn: async () => {
-            const res = await fetch(`https://mobile-market-server.onrender.com/bookings?email=${user?.email}`)
+            const res = await fetch(`https://repair-mobile-market.onrender.com/bookings?email=${user?.email}`)
             const data = await res.json();
             return data;
         }
@@ -22,7 +22,7 @@ const MyOrders = () => {
     const deleteHandler = id => {
         const proceed = window.confirm('Sure to delete this booking!');
         if (proceed) {
-            fetch(`https://mobile-market-server.onrender.com/bookings/${id}`, {
+            fetch(`https://repair-mobile-market.onrender.com/bookings/${id}`, {
                 method: 'DELETE',
                 headers: {
                     authorization: `bearer ${localStorage.getItem('accessToken')}`

@@ -46,15 +46,15 @@ export const routes = createBrowserRouter([
             element: <ContactUs />
           },
           {
-            // https://mobile-market-server.onrender.com
+            // https://repair-mobile-market.onrender.com
             path:'/allProducts',
-            loader: async()=> await fetch(`https://mobile-market-server.onrender.com/usedMobile`),
+            loader: async()=> await fetch(`https://repair-mobile-market.onrender.com/usedMobile`),
             element: <AllProducts />
           },
        
         {
             path: '/mobile/:id',
-            loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/mobile/${params.id}`),
+            loader: async({params})=> await fetch(`https://repair-mobile-market.onrender.com/mobile/${params.id}`),
             element: <ProductDetails />
         },
      ]
@@ -72,7 +72,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/dashboard/addProducts',
                 element:<AddProducts /> ,
-                // loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/product/${params.id}`),
+                // loader: async({params})=> await fetch(`https://repair-mobile-market.onrender.com/product/${params.id}`),
             },
             {
               path: '/dashboard/cart',
@@ -91,7 +91,7 @@ export const routes = createBrowserRouter([
             {
                 path: '/dashboard/editProduct/:id',
                 element: <EditProduct />,
-                loader: async({params})=> await fetch(`https://mobile-market-server.onrender.com/myProducts/${params.id}`),
+                loader: async({params})=> await fetch(`https://repair-mobile-market.onrender.com/myProducts/${params.id}`),
             },
             {
                 path: '/dashboard/allUsers',

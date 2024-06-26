@@ -28,7 +28,7 @@ const ProductsCard = ({ mobile }) => {
             }
             
    
-    fetch('https://mobile-market-server.onrender.com/carts', {
+    fetch('https://repair-mobile-market.onrender.com/carts', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'

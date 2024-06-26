@@ -41,7 +41,7 @@ const ProductDetails = () => {
 
         }
         console.log(booking)
-        fetch(`https://mobile-market-server.onrender.com/bookings`, {
+        fetch(`https://repair-mobile-market.onrender.com/bookings`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

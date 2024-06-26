@@ -55,7 +55,7 @@ const EditProduct = () => {
             date, yearUsed
         }
         // console.log(newData)
-        fetch(`https://mobile-market-server.onrender.com/myProducts/${product._id}`, {
+        fetch(`https://repair-mobile-market.onrender.com/myProducts/${product._id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'

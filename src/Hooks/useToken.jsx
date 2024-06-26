@@ -5,7 +5,7 @@ const useToken = email => {
 
     useEffect(() => {
         if (email) {
-            fetch(`https://mobile-market-server.onrender.com/jwt?email=${email}`)
+            fetch(`https://repair-mobile-market.onrender.com/jwt?email=${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data)

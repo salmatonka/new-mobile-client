@@ -9,7 +9,7 @@ const Category = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://mobile-market-server.onrender.com/mobileCategory')
+        fetch('https://repair-mobile-market.onrender.com/mobileCategory')
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])

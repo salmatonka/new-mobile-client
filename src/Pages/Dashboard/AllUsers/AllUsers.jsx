@@ -9,7 +9,7 @@ const AllUsers = () => {
     const { isLoading, refetch, data: users = [] } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
-            const res = await fetch(`https://mobile-market-server.onrender.com/users`)
+            const res = await fetch(`https://repair-mobile-market.onrender.com/users`)
             const data = await res.json()
             return data;
         }
@@ -19,7 +19,7 @@ const AllUsers = () => {
         // console.log(id)
         const userPermission = window.confirm('Are you delete this users?');
         if (userPermission) {
-            fetch(`https://mobile-market-server.onrender.com/users?id=${id}`, {
+            fetch(`https://repair-mobile-market.onrender.com/users?id=${id}`, {
                 method: "DELETE"
 
             })
@@ -37,7 +37,7 @@ const AllUsers = () => {
     const handleVerifyUser = (id) => {
         const getPermission = window.confirm('Do you want to verify?');
         if (getPermission) {
-            fetch(`https://mobile-market-server.onrender.com/users?id=${id}`, {
+            fetch(`https://repair-mobile-market.onrender.com/users?id=${id}`, {
                 method: "PUT"
             })
                 .then(res => res.json())

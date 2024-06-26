@@ -16,7 +16,7 @@ const MyProductTable = ({myProduct}) => {
     const handleDeleteItem = id =>{
         const getPermission = window.confirm('Are you sure want to delete this product?')
       if(getPermission){
-        fetch(`https://mobile-market-server.onrender.com/myProducts/${id}`,{
+        fetch(`https://repair-mobile-market.onrender.com/myProducts/${id}`,{
           method: "DELETE",
     
         })

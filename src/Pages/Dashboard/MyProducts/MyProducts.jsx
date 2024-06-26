@@ -13,7 +13,7 @@ const MyProducts = () => {
   const { data: myProducts = [], refetch, isLoading } = useQuery({
     queryKey: ['myProducts', user?.email],
     queryFn: async () => {
-      const res = await fetch(`https://mobile-market-server.onrender.com/myProducts`)
+      const res = await fetch(`https://repair-mobile-market.onrender.com/myProducts`)
       const data = await res.json()
       return data;
     }

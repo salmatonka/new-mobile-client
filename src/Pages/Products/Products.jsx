@@ -8,7 +8,7 @@ const Products = () => {
     const { data: mobiles = [] } = useQuery({
         queryKey: ['mobiles'],
         queryFn: async () => {
-            const res = await fetch('https://mobile-market-server.onrender.com/usedMobile')
+            const res = await fetch('https://repair-mobile-market.onrender.com/usedMobile')
             const data = await res.json()
             return data;
         }

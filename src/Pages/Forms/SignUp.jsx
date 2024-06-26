@@ -55,7 +55,7 @@ const SignUp = () => {
     const saveUser = (name, email, role) => {
         const user = { name, email, role };
         console.log(user);
-        fetch('https://mobile-market-server.onrender.com/users', {
+        fetch('https://repair-mobile-market.onrender.com/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

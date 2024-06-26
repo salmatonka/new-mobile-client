@@ -46,7 +46,7 @@ const AddProducts = () => {
             date, yearUsed
         }
         console.log(newData)
-        fetch(`https://mobile-market-server.onrender.com/myProducts`, {
+        fetch(`https://repair-mobile-market.onrender.com/myProducts`, {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
