@@ -9,7 +9,7 @@ const Category = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        fetch('https://repair-mobile-market.onrender.com/mobileCategory')
+        fetch(`https://repair-mobile-market.onrender.com/mobileCategory`)
             .then(res => res.json())
             .then(data => setCategories(data))
     }, [])
@@ -24,8 +24,8 @@ const Category = () => {
                         categories?.map(category => <Link
                             key={category?.id}
                             category={category}
-                            to={`/mobile/${category?.category}`}>
-                            <button className='category-button bg-gradient-to-tr to-purple-400 from-cyan-300 w-full py-3 rounded-lg'>{category.name}</button></Link>
+                            to={`/usedMobile/${category?.category}`}>
+                            <button className='category-button bg-gradient-to-tr to-purple-400 from-cyan-300 w-full py-3 rounded-lg'>{category?.name}</button></Link>
                         )
                     }
                 </div>
