@@ -67,7 +67,7 @@ const AddProducts = () => {
 
 
     return (
-        <div className='bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 lg:px-14'>
+        <div className='bg-primary shadow-md py-10 lg:px-14'>
             <div className='flex justify-center mb-12 mt-5'>
                 <div className='shadow-xl p-10 border border-2'>
                     <h3 className='text-3xl text-bold text-center'>Please Add Product</h3>

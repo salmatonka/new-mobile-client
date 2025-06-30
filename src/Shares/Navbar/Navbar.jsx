@@ -19,8 +19,8 @@ const Navbar = () => {
   const [cart] = useCart()
 
   return (
-    <div className=''>
-      <div className="navbar z-40 fixed bg-gradient-to-tr to-purple-300 from-cyan-200">
+    <div className='sticky top-0 z-50 '>
+      <div className="navbar  bg-gradient-to-tr to-purple-300 from-cyan-200">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -123,6 +123,8 @@ const Navbar = () => {
                   </>)
               }
             </ul>
+
+            
           </div>
           <Link to='/' className="ml-2 lg:pl-20 text-xl font-bold tracking-wide"> mMarket.com</Link>
         </div>

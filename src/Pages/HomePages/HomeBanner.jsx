@@ -1,33 +1,34 @@
-import { TypeAnimation as RawTypeAnimation } from 'react-type-animation';
+// import { TypeAnimation as RawTypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from 'react-type-animation';
 
 const HomeBanner = () => {
-  return (
-    <div className=''>
+    return (
+         <div>
+         <div className=''>
 
-    <div className=''>
-
-        <span
-            style={{ fontSize: '20px' }}
-            className="w-full font-bold block bg-opacity-10 p-3 rounded-lg text-center "
+        <p
+            
+            className="w-full font-semibold block bg-opacity-10 pt-10 rounded-lg text-center "
         >
-            <span>What is </span>{' '}
-            <RawTypeAnimation
+            {/* <span>What is </span>{' '} */}
+           <TypeAnimation
                 sequence={[
-                    'm',
+                    'What is m',
                     1000,
-                    'mMarket',
+                    'What is mMarket',
                     1000,
-                    'mMarket.com?',
-                    1000,
+                    'What is mMarket.com?',
+                    1000
 
                 ]}
                 repeat={Infinity}
+                 style={{ fontSize: '22px' }}
             />
-        </span>
+        </p>
 
 
         {/* <h1 className="text-3xl pt-8 my-5 font-bold text-center  ">What is mMarket.com?</h1> */}
-        <p className=" text-center mt-5 dark:text-gray-900 ">mMarket.com is one of the world’s largest wholesale marketplaces, with 20 years of experience helping business-to-business <br /> (B2B) companies buy and sell their goods around the world.</p>
+        <p className=" text-center mt-4 dark:text-gray-900 ">mMarket.com is one of the world’s largest wholesale marketplaces, with 20 years of experience helping business-to-business <br /> (B2B) companies buy and sell their goods around the world.</p>
 
         <div className="carousel w-full h-96 pt-10 ">
             <div id="slide1" className="carousel-item w-full relative ">
@@ -64,7 +65,7 @@ const HomeBanner = () => {
 
     </div>
 </div>
-  )
+    )
 }
 
 export default HomeBanner

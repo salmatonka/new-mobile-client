@@ -6,8 +6,11 @@ import useTitle from '../../../Hooks/useTitle'
 const DashboardHome = () => {
   useTitle('DashboardHome')
   return (
-    <div className='max-w-[1240px] mx-auto'>
-      <div>Hello from dashboad hoome</div>
+    <div className=' bg-gray-100'>
+      <div>
+        <h1 className='text-2xl pt-8 mb-5 font-bold text-center '>Hello from dashboad home</h1>
+      </div>
+        
       <Reviews />
 
       <div className=''>

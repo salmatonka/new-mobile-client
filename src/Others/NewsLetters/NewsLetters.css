@@ -1,0 +1,65 @@
+/* newsLetter */
+
+#newsLetter{
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   align-items: center;
+   border: 1px solid #876a30;
+   margin-left: 80px;
+   margin-right: 80px;
+   /* background-image: url(https://wallpaperaccess.com/full/3458147.jpg); */
+   
+   background-repeat: no-repeat;
+   background-position: 20% 30%;
+   background-color: #171615;
+    margin-top: 80px; 
+    margin-bottom: 60px; 
+   
+}
+#newsLetter:hover {
+   border: 2px solid #876a30;
+ }
+.newsText h4{
+   font-size: 22px;
+   font-weight: 700;
+   color: #E0C264;
+}
+
+#newsLetter p{
+   font-size: 14px;
+   font-weight: 600;
+   color: #818ea0;
+}
+#newsLetter span{
+   color: #ffbd27;
+}
+#newsLetter .form{
+   display: flex;
+   width: 40%;
+}
+#newsLetter input{
+   height: 3.125rem;
+   padding: 0 1.25em;
+   font-size: 14px;
+   width: 100%;
+   border: 1px solid transparent;
+   border-radius: 4px;
+   outline: none;
+   border-top-right-radius: 0;
+   border-bottom-right-radius: 0;
+}
+
+#newsLetter button{
+   background-color: #E0C264;
+   color: #fff;
+   white-space: nowrap;
+   border-top-left-radius: 0;
+   border-bottom-left-radius: 0;
+}
+#newsLetter button:hover{
+   background-color: #818ea0;
+   color: #fff;
+   border: 1px solid #876a30;
+   
+}

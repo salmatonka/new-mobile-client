@@ -1,0 +1,13 @@
+.details-container{
+    display: grid;
+    grid-template-columns: 2.5fr 4fr;
+    gap: 40px;
+}
+
+@media all and (max-width:968px) {
+    .details-container{
+        display: grid;
+        grid-template-columns: repeat(1,1fr);
+        gap: 10px;
+    }
+}
