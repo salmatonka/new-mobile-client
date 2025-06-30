@@ -21,12 +21,12 @@ const MyProducts = () => {
   })
   // console.log(myProducts)
   return (
-    <div className="max-w-[1240px] mx-auto bg-gradient-to-tr to-purple-100 from-cyan-100 lg:px-14">
-      <div className=' bg-gradient-to-tr to-purple-100 from-cyan-100 py-10 '>
+    <div className="max-w-[1240px] mx-auto bg-bg-primary shadow-md lg:px-14">
+      <div className=' bg-bg-primary shadow-md py-10 '>
         {/* <h2>product:{myProducts.length}</h2> */}
         <h3 className='text-3xl text-bold pb-6 text-center'>My Product</h3>
         <div className="overflow-x-auto ">
-          <table className="table w-full  bg-gradient-to-tr to-purple-100 from-cyan-100 ">
+          <table className="table w-full  bg-bg-primary shadow-md ">
 
             <thead>
               <tr>
